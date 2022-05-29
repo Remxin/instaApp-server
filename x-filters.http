@@ -1,0 +1,15 @@
+### GET - pobierz wszystkie filtry
+GET http://localhost:3000/api/filters
+Content-Type: application/json
+
+### PATCH - dodaj sfiltrowane zdjęcie do danych o zdjęciu
+PATCH http://localhost:3000/api/filters
+Content-Type: application/json
+
+{
+    "imgId": 0,
+    "filter": "tint",
+    "r": 255,
+    "g": 0,
+    "b": 0
+}

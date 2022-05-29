@@ -1,0 +1,22 @@
+### GET - pobierz wszystkie dane
+GET http://localhost:3000/api/photos
+Content-Type: application/json
+
+
+### GET - pobierz konkretne id zdjecia
+GET http://localhost:3000/api/photos/0
+Content-Type: application/json
+
+
+### DELETE - usuwanie konkretnego zdjecia + jego danych
+DELETE http://localhost:3000/api/photos/0
+Content-Type: application/json
+
+### PATCH - zmiana historii
+PATCH http://localhost:3000/api/photos
+Content-Type: application/json
+
+{
+    "id": "0",
+    "status": "zmienione 1"
+}

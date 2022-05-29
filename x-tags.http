@@ -1,0 +1,38 @@
+### GET - pobierz wszystkie tagi
+GET http://localhost:3000/api/tags
+Content-Type: application/json
+
+### GET - pobierz wybrany tag
+GET http://localhost:3000/api/tags/5
+Content-Type: application/json
+
+### POST - pobierz wybrany tag
+POST http://localhost:3000/api/tags
+Content-Type: application/json
+
+{
+    "name": "#nowytag",
+    "popularity": 100320
+}
+
+### PATCH - aktualizacja tagów danego zdjęcia
+PATCH http://localhost:3000/api/photos/tags
+Content-Type: application/json
+
+{
+    "imgId": 0,
+    "tagId": 10
+}
+
+### GET - pobranie tagów danego zdjęcia
+GET http://localhost:3000/api/photos/tags/0
+Content-Type: application/json
+
+### PATCH - dodanie tagów masowo do zdjęcia
+PATCH http://localhost:3000/api/photos/tags/mass
+Content-Type: application/json
+
+{
+    "imgId": 0,
+    "tagsId": [1,2,3]
+}
