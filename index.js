@@ -3,7 +3,10 @@ const imageRouter = require("./app/imageRouter")
 const tagsRouter = require("./app/tagsRouter")
 const filterRouter = require("./app/filtersRouter")
 const fileRouter = require("./app/fileRouter")
+require("dotenv").config()
 
+
+const PORT = process.env.PORT || 3000
 http
     .createServer(async (req, res) => {
         // console.log(req.url.search("/api/filters"))
@@ -18,4 +21,4 @@ http
             fileRouter(req, res)
         }
     })
-    .listen(3000, () => console.log("listen on 3000"))
+    .listen(PORT, () => console.log(`Listening on port ${PORT}`))

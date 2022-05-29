@@ -277,5 +277,7 @@ const filters = [
     }
 ]
 
+const users = []
 
-module.exports = { photosArr, tagsArr, filters }
+
+module.exports = { photosArr, tagsArr, filters, users }
