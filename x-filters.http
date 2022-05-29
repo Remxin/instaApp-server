@@ -10,6 +10,20 @@ Content-Type: application/json
     "imgId": 0,
     "filter": "tint",
     "r": 255,
-    "g": 0,
+    "g": 255,
     "b": 0
 }
+
+### PATCH - dodaj sfiltrowane zdjęcie do danych o zdjęciu
+PATCH http://localhost:3000/api/filters
+Content-Type: application/json
+
+{
+    "imgId": 0,
+    "filter": "rotate",
+    "deg": 180
+}
+
+### GET - pobieranie przefiltrowanego zdjęcia
+GET http://localhost:3000/static/upload/nazwa_albumu/upload_6983e4d181a460365ba69e328985b729-rotate.jpg
+Content-Type: application/json
