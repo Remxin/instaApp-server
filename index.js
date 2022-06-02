@@ -3,6 +3,7 @@ const imageRouter = require("./app/imageRouter")
 const tagsRouter = require("./app/tagsRouter")
 const filterRouter = require("./app/filtersRouter")
 const fileRouter = require("./app/fileRouter")
+const userRouter = require("./app/userRouter")
 require("dotenv").config()
 
 
@@ -19,6 +20,8 @@ http
             filterRouter(req, res)
         } else if (req.url.search("/static/upload") !== -1) {
             fileRouter(req, res)
+        } else if (req.url.search("/api/user") !== -1) {
+            userRouter(req, res)
         }
     })
     .listen(PORT, () => console.log(`Listening on port ${PORT}`))

@@ -1,10 +1,17 @@
 const jwt = require("jsonwebtoken")
+const bcrypt = require("bcrypt")
 const { users } = require("./data")
 
 module.exports = {
     findUserById: (userId) => {
         const foundUser = users.find((user) => {
             return user.id == userId
+        })
+        return foundUser
+    },
+    findUserByEmail: (email) => {
+        const foundUser = users.find((user) => {
+            return user.email == email
         })
         return foundUser
     },

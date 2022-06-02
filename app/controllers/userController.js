@@ -5,7 +5,7 @@ const { users } = require("../data")
 module.exports = {
     createUser: async (email, name, lastName, password) => {
         const encryptedPassword = await userHelpers.encryptPass(password)
-        const id = user.length
+        const id = users.length
         const token = await userHelpers.signToken(email, id)
 
         const obj = {
@@ -32,7 +32,14 @@ module.exports = {
         return { msg: "Verified user" }
     },
 
-    login: async () => {
+    login: async (email, password) => {
+        const user = userHelpers.findUserByEmail(email)
+        const goodPass = userHelpers.descryptPass(password, user.password)
+        if (goodPass) {
+            const token = userHelpers.signToken(user.email, user.id)
+            return token
+        }
+        return false
 
     },
 
